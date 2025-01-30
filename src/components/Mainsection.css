@@ -1,0 +1,312 @@
+.main-section {
+    display: grid;
+    grid-template-columns: 25% 55% 20%;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f5f7fa;
+    margin-top: 50px;
+  }
+
+  .section-header {
+    background: linear-gradient(to right, #2563eb, #3b82f6);
+    padding: 15px 20px;
+    border-radius: 8px 8px 0 0;
+    margin: -20px -20px 20px -20px;
+  }
+
+  .section-header h2 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .left-section, .center-section, .right-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .chapter-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .chapter-container {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .chapter-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .chapter-button:hover {
+    background-color: #f3f4f6;
+  }
+
+  .chapter-button.current {
+    background-color: #fff7ed;
+    border-color: #fdba74;
+  }
+
+  .chapter-progress-container {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+
+  .chapter-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    background-color: #3b82f6;
+    transition: height 0.3s ease;
+  }
+
+  .sub-chapter-list {
+    list-style: none;
+    padding: 8px 0 0 45px;
+    position: relative;
+  }
+
+  .sub-chapter-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .sub-chapter-item:hover {
+    color: #3b82f6;
+  }
+
+  .sub-chapter-progress-container {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+
+  .sub-chapter-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    background-color: #3b82f6;
+    transition: height 0.3s ease;
+  }
+
+  .video-list, .resource-list {
+    display: grid;
+    gap: 15px;
+  }
+
+  .video-item, .resource-item {
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .video-item:hover, .resource-item:hover {
+    transform: translateY(-2px);
+  }
+
+  .video-thumbnail, .resource-thumbnail {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .content-progress-container {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    background-color: #3b82f6;
+    transition: height 0.3s ease;
+    z-index: 1;
+  }
+
+  .video-thumbnail img, .resource-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .video-title {
+    font-size: 14px;
+    margin: 8px 0;
+    color: #374151;
+  }
+
+  .resource-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .resource-item {
+    position: relative;
+  }
+
+  .resource-item p {
+    font-size: 14px;
+    margin: 8px 0;
+    color: #374151;
+    text-align: center;
+  }
+
+  .content-section {
+    margin-bottom: 30px;
+  }
+
+  .content-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #374151;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  /* Progress indicator overlays */
+  .chapter-progress-container svg,
+  .sub-chapter-progress-container svg,
+  .content-progress-container svg {
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    border-radius: 50%;
+  }
+
+  /* Vertical connecting lines */
+  .chapter-item {
+    position: relative;
+  }
+
+  .chapter-item::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 22px;
+    width: 3px;
+    height: calc(100% - 30px);
+    background-color: #e5e7eb;
+    z-index: 1;
+  }
+
+  .sub-chapter-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 22px;
+    width: 3px;
+    height: 100%;
+    background-color: #e5e7eb;
+    z-index: 1;
+  }
+
+  /* Interactive states */
+  .chapter-button:focus,
+  .sub-chapter-item:focus {
+    outline: none;
+    ring: 2px solid #3b82f6;
+    ring-offset: 2px;
+  }
+
+  .chapter-button:active,
+  .sub-chapter-item:active {
+    transform: scale(0.98);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .main-section {
+      grid-template-columns: 35% 65%;
+    }
+    
+    .right-section {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .main-section {
+      grid-template-columns: 100%;
+    }
+    
+    .left-section,
+    .center-section,
+    .right-section {
+      grid-column: span 1;
+    }
+  }
+
+  /* Accessibility improvements */
+  .chapter-button,
+  .sub-chapter-item,
+  .video-item,
+  .resource-item {
+    position: relative;
+  }
+
+  .chapter-button:focus-visible,
+  .sub-chapter-item:focus-visible,
+  .video-item:focus-visible,
+  .resource-item:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+
+  /* Loading states */
+  .loading {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  .main-video{
+    width: 680px;
+    border-radius: 10px;
+  }
+
+  /* Completed state animations */
+  @keyframes completedPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  .chapter-progress-container svg.completed,
+  .sub-chapter-progress-container svg.completed,
+  .content-progress-container svg.completed {
+    animation: completedPulse 0.3s ease-in-out;
+  }
